@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>Dont Fall Io - Jul Games</title>
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/elite-gamez/dont-fall@main/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/elite-gamez/dont-fall@main/style.css">
+
+  <script src="https://cdn.jsdelivr.net/gh/elite-gamez/dont-fall@main/UnityProgress.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/elite-gamez/dont-fall@main/UnityLoader.js"></script>
+</head>
+<body style="margin:0; padding:0; overflow:hidden; background:#000;" 
+      onload="FitScreen();" onresize="FitScreen();">
+
+  <div class="webgl-content">
+    <div id="gameContainer" style="width:100%; height:100%"></div>
+  </div>
+
+  <script>
+    function FitScreen() {
+      let w = window.innerWidth;
+      let h = window.innerHeight;
+      let container = document.getElementById("gameContainer");
+      container.style.width = w + "px";
+      container.style.height = h + "px";
+    }
+
+    var gameInstance = UnityLoader.instantiate(
+      "gameContainer",
+      "https://cdn.jsdelivr.net/gh/elite-gamez/dont-fall@main/game.json",
+      { onProgress: UnityProgress }
+    );
+  </script>
+</body>
+</html>
